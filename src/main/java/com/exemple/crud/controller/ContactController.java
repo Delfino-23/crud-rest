@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping({"/contacts"})
+@CrossOrigin(origins = "http://localhost:3000")
 public class ContactController {
 
     private final ContactRepository repository;
@@ -20,7 +21,7 @@ public class ContactController {
 
     // MÉTODOS DO CRUD AQUI
 
-    @GetMapping
+    @GetMapping(path = "/")
     public List findAll(){
         return repository.findAll();
     }
